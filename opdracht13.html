@@ -9,8 +9,11 @@
             
             // Het level inladen
             robotArm.randomLevel(1, 8);
+
+            var i = 1;
+            var move = true;
    
-            for (var i = 1; i < 10; i++) 
+            while(move == true)
             {
                 robotArm.grab();
                 if(robotArm.scan() != null)
@@ -27,8 +30,9 @@
                 }
                 else
                 {
-                    break;
+                    move = false;
                 }
+                i++
             }
             
             robotArm.run();
